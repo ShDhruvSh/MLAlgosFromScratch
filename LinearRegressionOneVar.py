@@ -12,7 +12,6 @@ class LinearRegressionOneVar():
         self.x = np.append(np.ones((1, len(x))), np.matrix(x), axis=0)
         self.y = np.array(y)
         self.oldThetas = []
-
     
     def loss_function(self, theta, x, y):
         return (1/(2*x.shape[1]))*np.sum(np.square((theta.T@x) - y), axis=1)
@@ -35,7 +34,7 @@ df = pd.read_csv("./data/ex1data1.txt", header=None, names=['Population', 'Profi
 x = df['Population'].to_numpy()
 y = df['Profit'].to_numpy()
 
-fig = plt.figure(figsize=(2, 2))
+fig = plt.figure(figsize=(10, 10))
 data = fig.add_subplot(221)
 
 data.scatter(x, y) 
